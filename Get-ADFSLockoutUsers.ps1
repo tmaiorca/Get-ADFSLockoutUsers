@@ -12,7 +12,7 @@ $users = Get-ADUser -Filter * -Searchbase | Select-Object UserPrincipalName
 
 #Finding users with ESL lockout from defined variable
 $input = $users
-$ESL_users = ForEach ($user in $ESL_users) {
+$ESL_users = ForEach ($user in $input) {
     #Custom PS object for report
     $PS_obj = [PSCustomObject]@{
         Username = ""
